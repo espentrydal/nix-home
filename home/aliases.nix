@@ -60,7 +60,7 @@
 
     # Reload the Home Manager configuration (after git push)
     xx =
-      "home-manager switch --flake github:espentrydal/nome && source ${homeDirectory}/.zshrc";
+      "home-manager switch --flake github:espentrydal/nix-home && source ${homeDirectory}/.zshrc";
 
     # Run Nix garbage collection
     xgc = "nix-env --delete-generations old && nix-store --gc";

@@ -73,9 +73,6 @@ in
 
     (cd ~/nx/nixpkgs && git grep $1)
   '')
-  (script "proj" ''
-    nix flake init --template github:espentrydal/nome
-  '')
   (script "wo" ''
     ${checkForArg1 "no executable specified"}
 
@@ -118,6 +115,6 @@ in
   (script "dvs" ''
     ${checkForArg1 "no template specified"}
 
-    nix flake init --template github:espentrydal/nome#$1
+    nix flake init --template github:espentrydal/nix-home#$1
   '')
 ]
