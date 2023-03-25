@@ -78,8 +78,8 @@
         nixosConfigurations =
           let
             modules = [
-              ./nixos/configuration.nix
-              ./nixos/hardware-configuration.nix
+              ./nixos-thinkpad/configuration.nix
+              ./nixos-thinkpad/hardware-configuration.nix
             ];
           in
             nixpkgs.lib.nixosSystem {
