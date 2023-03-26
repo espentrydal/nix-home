@@ -18,6 +18,7 @@ let
   checkForArg3 = msg: checkForArg 3 msg;
 
   prefix = ''
+    #!/bin/env bash
     set -o errexit
     set -o nounset
     set -o pipefail
