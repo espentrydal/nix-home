@@ -33,7 +33,7 @@
     };
 
     commit.gpgsign = "true";
-    gpg.program = "gpg2";
+    gpg.program = "gpg";
 
     protocol.keybase.allow = "always";
     credential.helper = "cache --timeout=86400";
