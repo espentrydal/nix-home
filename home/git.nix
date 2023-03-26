@@ -40,6 +40,6 @@
     pull.rebase = "false";
     init.defaultBranch = "main";
 
-    user = { signingkey = "72CA36A362E0D73D"; };
+    user = { signingkey = "F4AC885BDDF438E59E36BD07E5642B7B3A2E441D"; };
   };
 }
