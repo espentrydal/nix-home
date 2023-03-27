@@ -42,6 +42,7 @@
     dc = "docker compose";
     diff = "diff --color=auto";
     grep = "grep --color=auto";
+    less = "less -R"
     szsh = "source ~/.zshrc";
     tf = "terraform";
     tg = "terragrunt";
