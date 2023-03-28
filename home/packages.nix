@@ -92,10 +92,11 @@ let
   ];
 
   pythonTools = with pkgs; [
-    python311
+    python310
     poetry
-  ] ++ (with pkgs.python311Packages; [
+  ] ++ (with pkgs.python310Packages; [
     #httpie
+    jupyter
     pip
     virtualenv
   ]);
