@@ -94,9 +94,9 @@ let
   pythonTools = with pkgs; [
     python310
     poetry
+    jupyter
   ] ++ (with pkgs.python310Packages; [
     #httpie
-    jupyter
     pip
     virtualenv
   ]);
