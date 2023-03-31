@@ -2,10 +2,10 @@
   description = "My Nix world";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-init.url = "github:nix-community/nix-init";
@@ -20,7 +20,7 @@
     }:
     let
       # Constants
-      stateVersion = "22.05";
+      stateVersion = "22.11";
       system = "x86_64-linux";
       username = "espen";
       homeDirectory = self.lib.getHomeDirectory username;
@@ -52,7 +52,7 @@
           default = "${username}";
 
           "${username}" = home-manager.lib.homeManagerConfiguration {
-            inherit system pkgs;
+            inherit pkgs;
 
             modules = [ home ];
           };

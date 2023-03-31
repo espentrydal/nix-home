@@ -49,7 +49,7 @@ let
 
   pythonTools = with pkgs; [
 #    python310
-  ]);
+  ];
 
   shellTools = with pkgs; [
     comma
@@ -69,7 +69,6 @@ let
 in
 bin
 ++ local
-++ buildTools
 ++ fonts
 ++ monitoring
 ++ misc
