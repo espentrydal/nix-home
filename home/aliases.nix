@@ -24,7 +24,7 @@
 
     # Reload the Home Manager configuration (after git push)
     xx =
-      "home-manager switch --flake github:espentrydal/nix-home/minimal && source ${homeDirectory}/.zshrc";
+      "home-manager switch --flake github:espentrydal/nix-home/minimal-ppc64le && source ${homeDirectory}/.zshrc";
 
     # Run Nix garbage collection
     xgc = "nix-env --delete-generations old && nix-store --gc";
