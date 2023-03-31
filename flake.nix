@@ -2,7 +2,7 @@
   description = "My Nix world";
 
   inputs = {
-    nixpkgs.url = "github:espentrydal/nixpkgs/release-22.05-small-ppc64le";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-22.05";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager/release-22.05";
@@ -21,7 +21,7 @@
     let
       # Constants
       stateVersion = "22.05";
-      system = "ppc64le-linux";
+      system = "x86_64-linux";
       username = "espen";
       homeDirectory = self.lib.getHomeDirectory username;
 
