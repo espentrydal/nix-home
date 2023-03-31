@@ -28,6 +28,7 @@
   # Emacs
   emacs = {
     enable = true;
+    package = pkgs.emacs-nox;
     extraPackages = epkgs: [ epkgs.vterm ];
     extraConfig = ''
           (setq languagetool-java-arguments '("-Dfile.encoding=UTF-8"
@@ -94,13 +95,13 @@
   #nushell = import ./nushell.nix { inherit pkgs; };
 
   # Document conversion
-  pandoc = {
-    enable = true;
-    defaults = { metadata = { author = "Espen Trydal "; }; };
-  };
+  # pandoc = {
+  #   enable = true;
+  #   defaults = { metadata = { author = "Espen Trydal "; }; };
+  # };
 
   # The provider of my shell aesthetic
-  starship = import ./starship.nix;
+  #starship = import ./starship.nix;
 
   # My most-used multiplexer
   tmux = {

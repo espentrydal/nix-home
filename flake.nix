@@ -9,8 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-init.url = "github:nix-community/nix-init";
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    riff.url = "github:DeterminateSystems/riff";
   };
 
   outputs =
@@ -18,8 +16,6 @@
     , nixpkgs
     , flake-utils
     , home-manager
-    , rust-overlay
-    , riff
     , nix-init
     }:
     let
@@ -37,12 +33,10 @@
           xdg = { configHome = homeDirectory; };
         };
         overlays = [
-          (import rust-overlay)
           (self: super: {
-            riff = riff.packages.${system}.riff;
             nix-init = nix-init.packages.${system}.default;
           })
-        ] ++ (with self.overlays; [ go node rust ]);
+        ] ++ (with self.overlays; [ ]);
       };
 
       # Helper functions
@@ -70,21 +64,6 @@
 
         overlays = import ./overlays;
 
-      }
-
-      //
-
-      flake-utils.lib.eachSystem [ "x86_64-linux" ] (system: {
-        nixosConfigurations =
-          let
-            modules = [
-              ./nixos-thinkpad/configuration.nix
-              ./nixos-thinkpad/hardware-configuration.nix
-            ];
-          in
-            nixpkgs.lib.nixosSystem {
-              inherit modules system;
-            };
-      });
+      };
 
 }

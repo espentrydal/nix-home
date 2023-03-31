@@ -40,20 +40,10 @@ in
       | ${pkgs.cachix}/bin/cachix push $1
   '')
 
-  (script "docker-clean" ''
-    docker system prune -a --volumes
-  '')
-
   (script "build-push" ''
     ${checkForArg1 "no build attribute specified"}
 
     nix-build '<nixpkgs>' -A $1 | cachix push espentrydal && rm result
-  '')
-  (script "crate-hash" ''
-    ${checkForArg1 "no package name provided"}
-    ${checkForArg2 "no package version provided"}
-
-    nix-prefetch-url --type sha256 --unpack https://crates.io/api/v1/crates/$1/$2/download
   '')
   (script "fakeHash" ''
     echo "${fakeHash}" | pbcopy
@@ -94,25 +84,16 @@ in
 
     nix-env --file '<nixpkgs>' --query --available --attr-path -A $1
   '')
-
   (script "px" ''
     ${checkForArg1 "no system specified"}
 
     nix eval nixpkgs#pkgsCross.$1.stdenv.hostPlatform.config
   '')
-
   (script "dvt" ''
     ${checkForArg1 "no template specified"}
 
     nix flake init --template github:espentrydal/dev-templates#$1
   '')
-
-  (script "cleanup" ''
-    docker system prune -af
-    docker volume prune -f
-    docker image prune -af
-  '')
-
   (script "dvs" ''
     ${checkForArg1 "no template specified"}
 
