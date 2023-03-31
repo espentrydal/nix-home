@@ -36,7 +36,7 @@
           (self: super: {
             nix-init = nix-init.packages.${system}.default;
           })
-        ] ++ (with self.overlays; [ ]);
+        ];
       };
 
       # Helper functions
@@ -61,8 +61,6 @@
         lib = import ./lib {
           inherit pkgs;
         };
-
-        overlays = import ./overlays;
 
       };
 
