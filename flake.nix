@@ -52,7 +52,7 @@
           default = "${username}";
 
           "${username}" = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
+            inherit system pkgs;
 
             modules = [ home ];
           };
