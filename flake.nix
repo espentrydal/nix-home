@@ -21,7 +21,7 @@
     let
       # Constants
       stateVersion = "22.11";
-      system = "x86_64-linux";
+      system = "ppc64le-linux";
       username = "espen";
       homeDirectory = self.lib.getHomeDirectory username;
 
