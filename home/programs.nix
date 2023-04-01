@@ -28,7 +28,7 @@
   # Emacs
   emacs = {
     enable = true;
-    package = pkgs.emacs-nox;
+    package = pkgs.emacs;
     extraPackages = epkgs: [ epkgs.vterm ];
     extraConfig = ''
           (setq languagetool-java-arguments '("-Dfile.encoding=UTF-8"
