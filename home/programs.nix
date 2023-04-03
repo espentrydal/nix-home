@@ -17,12 +17,6 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
-    stdlib = ''
-      use_riff() {
-        watch_file Cargo.toml Cargo.lock
-        eval "$(riff print-dev-env)"
-      }
-    '';
   };
 
   # Emacs
@@ -46,7 +40,7 @@
   };
 
   # Fish shell
-  fish = import ./fish.nix { inherit homeDirectory pkgs; };
+  #fish = import ./fish.nix { inherit homeDirectory pkgs; };
 
   # Fuzzy finder
   fzf = {
