@@ -3,6 +3,9 @@
 }:
 
 {
+  # Alacritty
+  alacritty.enable = true;
+
   # Fancy replacement for cat
   bat.enable = true;
 
