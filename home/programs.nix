@@ -39,9 +39,6 @@
     enableAliases = true;
   };
 
-  # Fish shell
-  #fish = import ./fish.nix { inherit homeDirectory pkgs; };
-
   # Fuzzy finder
   fzf = {
     enable = true;
@@ -92,9 +89,6 @@
   #   enable = true;
   #   defaults = { metadata = { author = "Espen Trydal "; }; };
   # };
-
-  # The provider of my shell aesthetic
-  #starship = import ./starship.nix;
 
   # My most-used multiplexer
   tmux = {

@@ -9,12 +9,9 @@
     e = "emacsclient -nw";
 
     "," = "comma";
-    cat = "bat";
-    conf = "code ~/.config/nixpkgs";
     diff = "diff --color=auto";
     grep = "grep --color=auto";
     less = "less -R";
-    szsh = "source ~/.zshrc";
 
     ## Nix stuff. Inspired by: https://alexfedoseev.com/blog/post/nix-time.
 
