@@ -3,6 +3,9 @@
 }:
 
 {
+  # Alacritty
+  #alacritty.enable = true;
+
   # Fancy replacement for cat
   bat.enable = true;
 
@@ -17,17 +20,12 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
-    stdlib = ''
-      use_riff() {
-        watch_file Cargo.toml Cargo.lock
-        eval "$(riff print-dev-env)"
-      }
-    '';
   };
 
   # Emacs
   emacs = {
     enable = true;
+    package = pkgs.emacs;
     extraPackages = epkgs: [ epkgs.vterm ];
     extraConfig = ''
           (setq languagetool-java-arguments '("-Dfile.encoding=UTF-8"
@@ -44,9 +42,6 @@
     enableAliases = true;
   };
 
-  # Fish shell
-  fish = import ./fish.nix { inherit homeDirectory pkgs; };
-
   # Fuzzy finder
   fzf = {
     enable = true;
@@ -61,7 +56,6 @@
       editor = "vim";
       git_protocol = "ssh";
       prompt = "enabled";
-      aliases = (import ./aliases.nix { inherit homeDirectory; }).githubCli;
     };
   };
 
@@ -94,13 +88,10 @@
   #nushell = import ./nushell.nix { inherit pkgs; };
 
   # Document conversion
-  pandoc = {
-    enable = true;
-    defaults = { metadata = { author = "Espen Trydal "; }; };
-  };
-
-  # The provider of my shell aesthetic
-  starship = import ./starship.nix;
+  # pandoc = {
+  #   enable = true;
+  #   defaults = { metadata = { author = "Espen Trydal "; }; };
+  # };
 
   # My most-used multiplexer
   tmux = {
@@ -122,9 +113,6 @@
       tmux-fzf
     ];
   };
-
-  # VSCode
-  #vscode = import ./vscode.nix { inherit pkgs; };
 
   # My fav shell
   zsh = import ./zsh.nix {
