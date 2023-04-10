@@ -1,4 +1,6 @@
-{ config, pkgs, ... }:
+{ pkgs
+, system
+}:
 
 {
   services.xserver = {
@@ -11,7 +13,8 @@
       gdm.enable = true;
       autoLogin.enable = false;
       autoLogin.user = "espen";
-      defaultSession = "xfce+i3";
+      #defaultSession = "xfce+i3";
+      defaultSession = "gnome";
     };
 
     desktopManager = {

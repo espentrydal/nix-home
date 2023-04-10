@@ -62,8 +62,6 @@
           inherit pkgs;
         };
 
-        overlays = import ./overlays;
-
       }
 
       //
@@ -75,6 +73,7 @@
             modules = [
               ./nixos-thinkpad/configuration.nix
               ./nixos-thinkpad/hardware-configuration.nix
+              home
             ];
           };
         };
