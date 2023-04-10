@@ -75,16 +75,15 @@
       //
 
       flake-utils.lib.eachSystem [ "x86_64-linux" ] (system: {
-        nixosConfigurations =
-          let
+        nixosConfigurations = {
+          thinkpad = nixpkgs.lib.nixosSystem {
+            inherit system;
             modules = [
               ./nixos-thinkpad/configuration.nix
               ./nixos-thinkpad/hardware-configuration.nix
             ];
-          in
-            nixpkgs.lib.nixosSystem {
-              inherit modules system;
-            };
+          };
+        };
       });
 
 }
