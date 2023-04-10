@@ -18,6 +18,6 @@
 
   # ZFS
   boot.supportedFilesystems = [ "zfs" ];
-  networking.hostId = (builtins.substring 0 8 (builtins.readFile "/etc/machine-id"));
+  networking.hostId = (builtins.substring 0 8 "f6b881df36fd44838467f01c48ecd300");
 
 }

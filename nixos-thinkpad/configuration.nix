@@ -1,17 +1,8 @@
 { pkgs, ... }:
 
-let
-  nixos-hardware = builtins.fetchGit {
-    url = "https://github.com/espentrydal/nixos-hardware.git";
-    ref = "master";
-  };
-
-in
 {
   imports =
     [
-      (import "${nixos-hardware}/lenovo/thinkpad/x1-extreme/gen1")
-      /etc/nixos/hardware-configuration.nix
       ./boot.nix
       #./borgbackup.nix
       ./common-configuration.nix

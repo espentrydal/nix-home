@@ -131,6 +131,21 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1660594541,
+        "narHash": "sha256-a2huCtcQr/BUqPq2QANzt8spIylTooVMz9H6PyH1VaI=",
+        "owner": "espentrydal",
+        "repo": "nixos-hardware",
+        "rev": "f130435a802afaf0dbbd9cd22299c7fc3e3581bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "espentrydal",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1679172431,
@@ -168,6 +183,7 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nix-init": "nix-init",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2"
       }
     },
